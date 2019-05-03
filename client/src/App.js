@@ -3,11 +3,15 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import Results from "./components/Results";
+import Navbar from "./components/Navbar";
 
 class App extends Component {
   render() {
     return (
+      
       <Router>
+                <Navbar />
+
         <div className="App">
           <div className="App-header">
             <img src={logo} className="App-logo" alt="logo" />
@@ -20,6 +24,7 @@ class App extends Component {
         </div>
         <Route path="/results" component={Results}/>
       </Router>
+      
     );
   }
 }
