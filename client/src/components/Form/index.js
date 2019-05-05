@@ -1,23 +1,24 @@
 import React from 'react';
 import { Jumbotron, Col, Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-export default class Example extends React.Component {
-    render() {
+function SearchForm(props) {
       return (
           <Jumbotron>
         <Form>
           <FormGroup row>
-            <Label for="exampleEmail" sm={2}>Book Title</Label>
+            <Label for="BookTitle" sm={2}>Book Title</Label>
             <Col sm={10}>
-              <Input type="email" name="email" id="exampleEmail" placeholder="with a placeholder" />
+              <Input type="text" name="bookTitle" id="exampleEmail" onChange={props.handleInputChange}
+          value={props.bookTitle} placeholder="Enter Book Title" />
             </Col>
             <hr className="my-2" />
 
           </FormGroup>
           <FormGroup row>
-            <Label for="examplePassword" sm={2}>Password</Label>
+            <Label for="author" sm={2}>author</Label>
             <Col sm={10}>
-              <Input type="password" name="password" id="examplePassword" placeholder="password placeholder" />
+              <Input type="text" name="author" id="exampleEmail" onChange={props.handleInputChange}
+          value={props.author} placeholder="Enter Book Author" />
             </Col>
           </FormGroup>
           <FormGroup row>
@@ -26,10 +27,11 @@ export default class Example extends React.Component {
               <Input type="select" name="select" id="exampleSelect" />
             </Col>
           </FormGroup>
-          <Button color="primary" href="/results" >Search</Button>{' '}
+          <Button color="primary" href="/results"  onClick={props.handleFormSubmit} >Search</Button>{' '}
 
         </Form>
         </Jumbotron>
       );
-    }
+    
   }
+  export default SearchForm;

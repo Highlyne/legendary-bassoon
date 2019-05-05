@@ -5,10 +5,31 @@ import "./App.css";
 import Results from "./components/Results";
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
-import Form from "./components/Form";
+import SearchBox from "./components/Form";
 import Cards from "./components/Cards";
 
 class App extends Component {
+  state = {
+    bookTitle: "",
+    author: "",
+    results: []
+  };
+
+  // Handle the change  in input of the form
+  handleInputChange = event => {
+    const name = event.target.name;
+    const value = event.target.value;
+    // Deconstructing the state object 
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    alert(this.state.bookTitle);
+  };
+
   render() {
     return (
       
@@ -16,7 +37,9 @@ class App extends Component {
                 <Navbar />
                 <Jumbotron />
                 <div className="container">
-                <Form />
+                <SearchBox  bookTitle={this.state.bookTitle} author={this.state.author}
+          handleFormSubmit={this.handleFormSubmit}
+          handleInputChange={this.handleInputChange} />
                 </div>
 
         
