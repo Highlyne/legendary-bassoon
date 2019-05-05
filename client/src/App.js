@@ -4,6 +4,9 @@ import logo from "./logo.svg";
 import "./App.css";
 import Results from "./components/Results";
 import Navbar from "./components/Navbar";
+import Jumbotron from "./components/Jumbotron";
+import Form from "./components/Form";
+import Cards from "./components/Cards";
 
 class App extends Component {
   render() {
@@ -11,18 +14,15 @@ class App extends Component {
       
       <Router>
                 <Navbar />
+                <Jumbotron />
+                <div className="container">
+                <Form />
+                </div>
 
-        <div className="App">
-          <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-          </div>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
-          <Link to={'/results'}> Results</Link>
-        </div>
-        <Route path="/results" component={Results}/>
+        
+
+         
+        <Route path="/results" component={Cards}/>
       </Router>
       
     );
