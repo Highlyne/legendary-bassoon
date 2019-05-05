@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
-import Results from "./components/Results";
+import API from './utils/API';
 import Navbar from "./components/Navbar";
 import Jumbotron from "./components/Jumbotron";
 import SearchBox from "./components/Form";
@@ -28,8 +28,11 @@ class App extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     alert(this.state.bookTitle);
+    API.search(this.state.author);
+
   };
 
+  
   render() {
     return (
       
