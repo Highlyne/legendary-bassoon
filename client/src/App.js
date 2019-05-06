@@ -28,12 +28,18 @@ class App extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const query = {...this.state};
-    API.search(query);
+    API.search(query)
+    .then((res) => {
+      console.log(res.data.items)
+
+      this.setState({ results: res.results })
+      console.log(this.state.results)
+    })
+    .catch(err => console.log(err));
     this.setState({
       bookTitle: "",
       author: ""
     })
-
   };
 
   

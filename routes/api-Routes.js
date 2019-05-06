@@ -12,7 +12,7 @@ router.get("/search", (req, res) => {
 
     axios
     .get(searchAPI)
-    .then( (results  ) => console.log(results))
+    .then( (response ) => res.json(response.data))
     .catch(err => res.status(422).json(err));
 });
 module.exports = router;
