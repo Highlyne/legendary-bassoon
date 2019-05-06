@@ -27,8 +27,12 @@ class App extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    alert(this.state.bookTitle);
-    API.search(this.state.author);
+    const query = {...this.state};
+    API.search(query);
+    this.setState({
+      bookTitle: "",
+      author: ""
+    })
 
   };
 
