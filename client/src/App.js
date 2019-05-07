@@ -12,7 +12,7 @@ class App extends Component {
   state = {
     bookTitle: "",
     author: "",
-    results: []
+    results:[]
   };
 
   // Handle the change  in input of the form
@@ -32,16 +32,20 @@ class App extends Component {
     .then((res) => {
       console.log(res.data.items)
 
-      this.setState({ results: res.results })
-      console.log(this.state.results)
+      this.setState({ results: res.data.items });
+      console.log(this.state.results);
+      let volume = this.state.results.map(volumes => volumes)
+   console.log(volume);
     })
     .catch(err => console.log(err));
     this.setState({
       bookTitle: "",
       author: ""
-    })
+    });
+   
   };
 
+ 
   
   render() {
     return (
