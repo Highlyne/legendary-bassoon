@@ -10,7 +10,7 @@ router.get("/search", (req, res) => {
     const q = req.query.q;
     //  Set up URL with user request & hidden API Key
     const  searchAPI = BASEURL + q + APIKEY + PARAMETER;
-
+    console.log(searchAPI);
     axios
     .get(searchAPI)
     .then( (response ) => res.json(response.data))

@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import BooksICON from "../../images/stack-of-books.png";
+
 import { Link } from "react-router-dom";
 import { Collapse,
     Navbar,
@@ -31,33 +33,22 @@ class Toolbar extends Component {
     return (
         <div>
         <Navbar color="light" light expand="md">
-          <NavbarBrand href="/">Google Books Api</NavbarBrand>
+          <NavbarBrand href="/">
+          <img style={{height:'75px', fontFamily: 'Volkhov'}} src={BooksICON}   alt="Stack of Books" />
+          Book Hunt
+          </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/components/">Favorites</NavLink>
+                <NavLink href="/components/">Git Repo</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/">Trending</NavLink>
+                <NavLink href="https://github.com/">Linked In</NavLink>
               </NavItem>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle nav caret>
-                  Options
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem>
-                    Option 1
-                  </DropdownItem>
-                  <DropdownItem>
-                    Option 2
-                  </DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem>
-                    Reset
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
+              <NavItem>
+                <NavLink href="https://github.com/">Portfolio</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
